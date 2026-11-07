@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Apple visionOS Volumetric Glassmorphism & UE5 High-Fidelity Glass */
+  .vision-glass {
+    background: rgba(10, 15, 30, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .vision-glass-subtle {
+    background: rgba(10, 15, 30, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 8px 24px -2px rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .vision-glass-panel {
+    background: rgba(10, 15, 30, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    box-shadow: 0 20px 48px -4px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
+  }
+
+  /* Frosted Edge with Specular Highlight */
+  .vision-frosted-edge {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+  }
+
+  /* Glass Badge with Subtle Metallic Sheen */
+  .vision-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.22), 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .vision-badge-cyan {
+    background: rgba(34, 211, 238, 0.07);
+    border: 1px solid rgba(165, 243, 252, 0.35);
+    color: #a5f3fc;
+    box-shadow: 0 0 14px -2px rgba(34, 211, 238, 0.28), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .vision-badge-amber {
+    background: rgba(245, 158, 11, 0.07);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    color: #fde68a;
+    box-shadow: 0 0 14px -2px rgba(245, 158, 11, 0.28), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+  }
+
+  /* Micro-Neon Interactive Outlines (No Solid Blocks) */
+  .neon-outline-cyan {
+    border: 1px solid rgba(34, 211, 238, 0.5);
+    background: rgba(34, 211, 238, 0.08);
+    color: #e0f2fe;
+    box-shadow: 0 0 14px -2px rgba(34, 211, 238, 0.3), inset 0 0 10px -2px rgba(34, 211, 238, 0.2);
+  }
+
+  .neon-outline-amber {
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    background: rgba(245, 158, 11, 0.08);
+    color: #fef3c7;
+    box-shadow: 0 0 14px -2px rgba(245, 158, 11, 0.3), inset 0 0 10px -2px rgba(245, 158, 11, 0.2);
+  }
+
+  .neon-outline-rose {
+    border: 1px solid rgba(244, 63, 94, 0.5);
+    background: rgba(244, 63, 94, 0.08);
+    color: #ffe4e6;
+    box-shadow: 0 0 14px -2px rgba(244, 63, 94, 0.3), inset 0 0 10px -2px rgba(244, 63, 94, 0.2);
+  }
+
+  .vision-glow-cyan {
+    box-shadow: 0 0 16px -2px rgba(34, 211, 238, 0.4), inset 0 0 10px -2px rgba(34, 211, 238, 0.22);
+  }
+
+  .vision-glow-amber {
+    box-shadow: 0 0 16px -2px rgba(245, 158, 11, 0.4), inset 0 0 10px -2px rgba(245, 158, 11, 0.22);
+  }
+
+  /* Metallic Silver to Ice Cyan Header Gradient */
+  .vision-title-gradient {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 45%, #A5F3FC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.2px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes breathingCyan {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(34, 211, 238, 0.25), inset 0 0 8px rgba(34, 211, 238, 0.15);
+    border-color: rgba(34, 211, 238, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.55), inset 0 0 14px rgba(34, 211, 238, 0.3);
+    border-color: rgba(34, 211, 238, 0.85);
+  }
+}
+
+@keyframes breathingAmber {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.25), inset 0 0 8px rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(245, 158, 11, 0.55), inset 0 0 14px rgba(245, 158, 11, 0.3);
+    border-color: rgba(245, 158, 11, 0.85);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-breathing-cyan {
+  animation: breathingCyan 2.8s ease-in-out infinite;
+}
+
+.animate-breathing-amber {
+  animation: breathingAmber 2.8s ease-in-out infinite;
+}
+
+/* Custom sleek visionOS glass scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 15, 30, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.5);
+}
